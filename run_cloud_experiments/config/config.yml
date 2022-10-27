@@ -1,0 +1,5 @@
+# Copy-paste this file to `config.local.yml` to add you own secret settings
+
+anylogic_cloud:
+  api_key: 7a3563c1-ea1c-41d6-8009-b7abfd93f7ba
+  url: https://engine.holontool.nl

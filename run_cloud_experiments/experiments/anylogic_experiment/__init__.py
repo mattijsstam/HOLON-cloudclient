@@ -1,3 +1,4 @@
+import re
 import time
 
 from experiments.client import Client
@@ -10,7 +11,7 @@ class AnyLogicExperiment(Outcomes):
         self.client = Client(experiment)
         self.duration_s = 0
 
-    def runSimulation(self):
+    def runSimulation(self, return_outcome):
         '''Runs a simulation and writes some outcomes'''
         startTime_ms = round(time.time() * 1000)
         print("Working...")
@@ -33,3 +34,6 @@ class AnyLogicExperiment(Outcomes):
 
         print('\nWriting outcomes..')
         self.write_outcomes()
+
+        if return_outcome:
+            return self.outcomes

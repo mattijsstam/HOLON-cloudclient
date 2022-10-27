@@ -20,7 +20,7 @@ class ExperimentSettings:
         Returns settings for the expermient with that name,
         return blank settings if it doesn't exist
         """
-        self.get(experiment_name, self.experiments.get(experiment_name, {}))
+        self.experiments.get(experiment_name, self.get(experiment_name, {}))
 
     @classmethod
     def load(cls, path="config/experiments.yml"):
