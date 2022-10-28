@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     # these variables would be send from the front end to the endpoint
     # interactive input ||
-    capacity_electric_kw = 8000
+    capacity_electric_kw = 0
     # defined in the CMS, contained in the storyline ||
     results = ["totalElectricityImported_MWh", "totalElectricityExported_MWh"]
     scenario = "webdev_cloud_poc"
@@ -70,7 +70,7 @@ if __name__ == "__main__":
                 "capacity_heat_kw": 0,
             }
         },
-        results=results,
+        # results=results,
     )
 
     # this would be the response
