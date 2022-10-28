@@ -1,7 +1,8 @@
 __pycache__
 .pytest_cache
 
-Base/config/config.local.yml
+**/config.yml
+**/experiments.yml
 .vscode/settings.json
 run_cloud_experiments/Pipfile.lock
 run_cloud_experiments/output/**
