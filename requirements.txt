@@ -1,7 +1,0 @@
-pytest
-pylint
-pyyaml
-pandas
-openpyxl
-pip
-https://cloud.anylogic.com/files/api-8.5.0/clients/anylogiccloudclient-8.5.0-py3-none-any.whl#egg=anylogiccloudclient

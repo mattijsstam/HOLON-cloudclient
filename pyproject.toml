@@ -1,2 +1,16 @@
-[build-system]
-requires = ["setuptools @ git+https://github.com/pypa/setuptools.git@main"]
+[project]
+name = "cloudclient"
+description = "The AnyLogic cloudclient used to interface the HOLON model to the web"
+version = "1.0"
+dependencies = [
+    "pytest",
+    "pylint",
+    "pyyaml",
+    "pandas",
+    "openpyxl",
+    "pip",
+    "anylogiccloudclient @ https://cloud.anylogic.com/files/api-8.5.0/clients/anylogiccloudclient-8.5.0-py3-none-any.whl#egg=anylogiccloudclient",
+]
+
+[tool.setuptools.packages.find]
+where = ["cloudclient"]
