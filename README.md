@@ -5,8 +5,8 @@ multiple experiments sequentially. No more adjusting classes! Based on the exist
 
 - [Experiments module](#experiments-module)
   - [Installation](#installation)
-    - [Conda](#conda)
-    - [Pipenv](#pipenv)
+    - [Development](#development)
+    - [Production](#production)
   - [Starting up](#starting-up)
   - [Running the module](#running-the-module)
   - [Pipenv support](#pipenv-support)
@@ -14,20 +14,24 @@ multiple experiments sequentially. No more adjusting classes! Based on the exist
 
 ## Installation
 
-### Conda
-This will create and activate the an environment that includes all the requirements.
+### Development
+Uses editable wheel build.
 ```bash
-# ~/run_cloud_experiments
-conda env create -f environment.yml
-conda activate anylogicexperiments
+git clone https://github.com/ZEnMo/HOLON-cloudclient.git
+cd HOLON-cloudclient
+# CREATE AND ACTIVATE YOUR ENV OF CHOICE
+pip install -e .
 ```
 
-### Pipenv
 
+### Production
+**Direct**
 ```bash
-# ~/run_cloud_experiments
-pip install --user pipenv
-pipenv install
+pip install https://github.com/ZEnMo/HOLON-cloudclient/archive/main.zip
+```
+**Via requirements.txt**
+```
+git+https://github.com/ZEnMo/HOLON-cloudclient@master#egg=cloudclient
 ```
 
 ## Starting up

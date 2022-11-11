@@ -6,6 +6,7 @@ dependencies = [
     "pytest",
     "pylint",
     "pyyaml",
+    "pydantic",
     "pandas",
     "openpyxl",
     "pip",
