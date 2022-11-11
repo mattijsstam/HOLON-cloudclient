@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class ConsumptionAsset {
+            asset_type
+          }
+          class ConsumptionAssetTypeEnum {
+            name
+          }
+          class ElectricConsumptionAsset {
+            yearlyDemandElectricity_kWh : float
+          }
+          class HeatConsumptionAsset {
+            yearlyDemandHeat_kWh : float
+          }
+          class HybridConsumptionAsset {
+          }
+          ElectricConsumptionAsset --|> ConsumptionAsset
+          HeatConsumptionAsset --|> ConsumptionAsset
+          HybridConsumptionAsset --|> ElectricConsumptionAsset
+          HybridConsumptionAsset --|> HeatConsumptionAsset
+          ConsumptionAssetTypeEnum --* ConsumptionAsset : asset_type
+  
+       </div>
+  </body>
+</html>
