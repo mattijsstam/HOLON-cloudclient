@@ -3,6 +3,15 @@
 The experiments module allows you to define your experiment in a config file and run one or
 multiple experiments sequentially. No more adjusting classes! Based on the existing scripts.
 
+- [Experiments module](#experiments-module)
+  - [Installation](#installation)
+    - [Conda](#conda)
+    - [Pipenv](#pipenv)
+  - [Starting up](#starting-up)
+  - [Running the module](#running-the-module)
+  - [Pipenv support](#pipenv-support)
+  - [Data classes](#data-classes)
+
 ## Installation
 
 ### Conda
@@ -52,3 +61,13 @@ run the experiments: `pipenv run experiments {experiment_name}`.
 
 
 Happy experimenting!
+
+## Data classes
+
+Data classes are used to structure and validate data before it is sent to the AnyLogic API. Find the class diagrams below:
+
+1. [Grid connections](htmls\gridconnection_classes.html)
+2. [Conversion assets](htmls\conversion_classes.html)
+3. [Consumption assets](htmls\consumption_classes.html)
+4. [Storage assets](htmls\storage_classes.html)
+5. [Production assets](htmls\production_classes.html)
