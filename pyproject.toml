@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "cloudclient"
 description = "The AnyLogic cloudclient used to interface the HOLON model to the web"
@@ -15,3 +19,6 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["cloudclient"]
+
+[project.scripts]
+init = "scripts.initiate:create_folder"
