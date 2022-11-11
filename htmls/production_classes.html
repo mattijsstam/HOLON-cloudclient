@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class ElectricProductionAsset {
+            capacityElectricity_kW : float
+          }
+          class HeatProductionAsset {
+            capacityHeat_kW : float
+          }
+          class HybridProductionAsset {
+          }
+          class ProductionAsset {
+            alias : str
+            asset_type
+          }
+          class ProductionAssetTypeEnum {
+            name
+          }
+          ElectricProductionAsset --|> ProductionAsset
+          HeatProductionAsset --|> ProductionAsset
+          HybridProductionAsset --|> ElectricProductionAsset
+          HybridProductionAsset --|> HeatProductionAsset
+          ProductionAssetTypeEnum --* ProductionAsset : asset_type
+  
+       </div>
+  </body>
+</html>

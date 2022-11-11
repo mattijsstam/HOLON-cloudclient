@@ -3,22 +3,35 @@
 The experiments module allows you to define your experiment in a config file and run one or
 multiple experiments sequentially. No more adjusting classes! Based on the existing scripts.
 
+- [Experiments module](#experiments-module)
+  - [Installation](#installation)
+    - [Development](#development)
+    - [Production](#production)
+  - [Starting up](#starting-up)
+  - [Running the module](#running-the-module)
+  - [Pipenv support](#pipenv-support)
+  - [Data classes](#data-classes)
+
 ## Installation
 
-### Conda
-This will create and activate the an environment that includes all the requirements.
+### Development
+Uses editable wheel build.
 ```bash
-# ~/run_cloud_experiments
-conda env create -f environment.yml
-conda activate anylogicexperiments
+git clone https://github.com/ZEnMo/HOLON-cloudclient.git
+cd HOLON-cloudclient
+# CREATE AND ACTIVATE YOUR ENV OF CHOICE
+pip install -e .
 ```
 
-### Pipenv
 
+### Production
+**Direct**
 ```bash
-# ~/run_cloud_experiments
-pip install --user pipenv
-pipenv install
+pip install https://github.com/ZEnMo/HOLON-cloudclient/archive/main.zip
+```
+**Via requirements.txt**
+```
+git+https://github.com/ZEnMo/HOLON-cloudclient@master#egg=cloudclient
 ```
 
 ## Starting up
@@ -52,3 +65,14 @@ run the experiments: `pipenv run experiments {experiment_name}`.
 
 
 Happy experimenting!
+
+## Data classes
+
+Data classes are used to structure and validate data before it is sent to the AnyLogic API. Find the class diagrams below:
+
+1. [Grid connections](htmls\gridconnection_classes.html)
+2. [Conversion assets](htmls\conversion_classes.html)
+3. [Consumption assets](htmls\consumption_classes.html)
+4. [Storage assets](htmls\storage_classes.html)
+5. [Production assets](htmls\production_classes.html)
+6. [Gridnode assets](htmls\gridnode_classes.html)

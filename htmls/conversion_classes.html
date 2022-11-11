@@ -1,0 +1,53 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class AmbientTempTypeEnum {
+            name
+          }
+          class ChemicalHeatConversionAsset {
+            capacityHeat_kW : float
+          }
+          class ConversionAsset {
+            asset_type
+            eta_r : float
+          }
+          class ConversionAssetTypeEnum {
+            name
+          }
+          class DefaultEnergyAsset {
+            name : str
+          }
+          class ElectricCoversionAsset {
+            capacityElectricity_kW : float
+          }
+          class ElectricHeatConversionAsset {
+            capacityElectricity_kW : float
+          }
+          class EnergyAsset {
+          }
+          class HeatConversionAsset {
+            deliveryTemp_degc : float
+          }
+          class HybridHeatCoversionAsset {
+          }
+          class TransportHeatConversionAsset {
+            ambientTempType
+          }
+          ChemicalHeatConversionAsset --|> HeatConversionAsset
+          ConversionAsset --|> EnergyAsset
+          DefaultEnergyAsset --|> EnergyAsset
+          ElectricCoversionAsset --|> ConversionAsset
+          ElectricHeatConversionAsset --|> HeatConversionAsset
+          HeatConversionAsset --|> ConversionAsset
+          HybridHeatCoversionAsset --|> ChemicalHeatConversionAsset
+          HybridHeatCoversionAsset --|> TransportHeatConversionAsset
+          TransportHeatConversionAsset --|> ElectricHeatConversionAsset
+          AmbientTempTypeEnum --* TransportHeatConversionAsset : ambientTempType
+          ConversionAssetTypeEnum --* ConversionAsset : asset_type
+  
+       </div>
+  </body>
+</html>
