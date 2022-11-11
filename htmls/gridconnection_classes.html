@@ -1,0 +1,76 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Building {
+            building_type
+          }
+          class BuildingTypeEnum {
+            name
+          }
+          class BuiltEnvironment {
+            heating_type
+            insulation_label
+          }
+          class DistrictHeating {
+            district_heating_type
+          }
+          class DistrictHeatingTypeEnum {
+            name
+          }
+          class GridConnection {
+            assets : Optional[List[EnergyAsset]]
+            capacity_kw : float
+            id : str
+            owner_actor : str
+            parent_electric : str
+            parent_heat : Optional[str]
+          }
+          class HeatingTypeEnum {
+            name
+          }
+          class House {
+            housing_type
+          }
+          class HousingTypeEnum {
+            name
+          }
+          class Industry {
+            industry_type
+          }
+          class IndustryTypeEnum {
+            name
+          }
+          class InsulationLabelEnum {
+            name
+          }
+          class ProductionSite {
+            grid_type
+          }
+          class ProductionSiteEnum {
+            name
+          }
+          class Utility {
+            heating_type
+          }
+          Building --|> BuiltEnvironment
+          BuiltEnvironment --|> GridConnection
+          DistrictHeating --|> Utility
+          House --|> BuiltEnvironment
+          Industry --|> Utility
+          ProductionSite --|> GridConnection
+          Utility --|> GridConnection
+          BuildingTypeEnum --* Building : building_type
+          DistrictHeatingTypeEnum --* DistrictHeating : district_heating_type
+          HeatingTypeEnum --* BuiltEnvironment : heating_type
+          HeatingTypeEnum --* Utility : heating_type
+          HousingTypeEnum --* House : housing_type
+          IndustryTypeEnum --* Industry : industry_type
+          InsulationLabelEnum --* BuiltEnvironment : insulation_label
+          ProductionSiteEnum --* ProductionSite : grid_type
+  
+       </div>
+  </body>
+</html>
