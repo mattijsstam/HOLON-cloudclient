@@ -92,6 +92,7 @@ EV = VehicleElectricStorageAsset(
     capacityElectricity_kW=11,
     stateOfCharge_r=1.0,
     storageCapacity_kWh=50,
+    energy_consumption_kwhpkm = 0.2,
 )
 District_Heating_heat_buffer_HT_S = HeatStorageAsset(
     asset_type="STORAGE_HEAT",
@@ -137,6 +138,7 @@ EHGV = VehicleElectricStorageAsset(
     capacityElectricity_kW=110,
     stateOfCharge_r=1.0,
     storageCapacity_kWh=500,
+    energy_consumption_kwhpkm=1,
 )
 Grid_battery_10M = ElectricStorageAsset(
     asset_type="STORAGE_ELECTRIC",

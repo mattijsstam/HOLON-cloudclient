@@ -31,18 +31,20 @@ class ElectricStorageAsset(StorageAsset):
 
 
 class VehicleElectricStorageAsset(ElectricStorageAsset):
-    pass
+    energy_consumption_kwhpkm: float
 
 
 if __name__ == "__main__":
 
     dummy_data = {
-        "alias": "XL windmill",
-        "asset_type": "WINDMILL",
-        "capacityElectricity_kW": 7000.0,
+        "asset_type": "ELECTRIC_HEAVY_GOODS_VEHICLE",
+        "capacityElectricity_kW": 110,
+        "stateOfCharge_r": 1.0,
+        "storageCapacity_kWh": 500,
+        "energy_consumption_kwhpkm": 1,
     }
 
-    asset = ElectricStorageAsset(**dummy_data)
+    asset = VehicleElectricStorageAsset(**dummy_data)
     import json
 
     print(json.dumps(json.loads(asset.json()), indent=4))
