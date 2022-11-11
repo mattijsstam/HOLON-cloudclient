@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class ElectricGridNode {
+            grid_type
+          }
+          class ElectricGridTypeEnum {
+            name
+          }
+          class GridNode {
+            capacity_kw : float
+            id : str
+            owner_actor : str
+            parent : str
+          }
+          class HeatGridNode {
+            grid_type
+          }
+          class HeatGridTypeEnum {
+            name
+          }
+          ElectricGridNode --|> GridNode
+          HeatGridNode --|> GridNode
+          ElectricGridTypeEnum --* ElectricGridNode : grid_type
+          HeatGridTypeEnum --* HeatGridNode : grid_type
+  
+       </div>
+  </body>
+</html>

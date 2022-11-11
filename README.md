@@ -71,3 +71,4 @@ Data classes are used to structure and validate data before it is sent to the An
 3. [Consumption assets](htmls\consumption_classes.html)
 4. [Storage assets](htmls\storage_classes.html)
 5. [Production assets](htmls\production_classes.html)
+6. [Gridnode assets](htmls\gridnode_classes.html)
