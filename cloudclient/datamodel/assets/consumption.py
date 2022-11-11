@@ -1,5 +1,5 @@
 from enum import Enum
-from .energy import EnergyAsset
+from cloudclient.datamodel.assets.energy import EnergyAsset
 
 
 class ConsumptionAssetTypeEnum(Enum):

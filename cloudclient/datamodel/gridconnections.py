@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Extra
 from typing import Optional, List
-from assets import EnergyAsset
+from cloudclient.datamodel.assets import EnergyAsset
 
 from enum import Enum
 

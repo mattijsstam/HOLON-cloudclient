@@ -1,4 +1,4 @@
-from .energy import EnergyAsset, AmbientTempTypeEnum
+from cloudclient.datamodel.assets.energy import EnergyAsset, AmbientTempTypeEnum
 from enum import Enum
 
 
