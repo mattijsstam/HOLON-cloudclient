@@ -1,4 +1,4 @@
-from storage import (
+from cloudclient.datamodel import (
     HeatStorageAsset,
     ElectricStorageAsset,
     VehicleElectricStorageAsset,

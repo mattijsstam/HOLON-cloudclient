@@ -1,4 +1,4 @@
-from conversion import (
+from cloudclient.datamodel import (
     ElectricCoversionAsset,
     ChemicalHeatConversionAsset,
     TransportHeatConversionAsset,
@@ -40,7 +40,6 @@ House_DH_heatdeliveryset = ChemicalHeatConversionAsset(
     capacityHeat_kW=10,
     eta_r=0.99,
     deliveryTemp_degc=90,
-    ambientTempType="AIR",
 )
 
 Electrolyser = ElectricCoversionAsset(

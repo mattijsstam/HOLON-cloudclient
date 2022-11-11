@@ -1,4 +1,4 @@
-from production import ElectricProductionAsset
+from cloudclient.datamodel import ElectricProductionAsset
 
 
 House_solarpanels_S = ElectricProductionAsset(
