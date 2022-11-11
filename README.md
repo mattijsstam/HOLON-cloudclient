@@ -1,4 +1,5 @@
 # Experiments module
+(works better at the [Github Pages](https://zenmo.github.io/HOLON-cloudclient/))
 
 The experiments module allows you to define your experiment in a config file and run one or
 multiple experiments sequentially. No more adjusting classes! Based on the existing scripts.
