@@ -1,4 +1,4 @@
-from energy import EnergyAsset
+from .energy import EnergyAsset
 from enum import Enum
 
 

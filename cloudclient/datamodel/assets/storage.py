@@ -1,4 +1,4 @@
-from energy import EnergyAsset, AmbientTempTypeEnum
+from .energy import EnergyAsset, AmbientTempTypeEnum
 from enum import Enum
 
 

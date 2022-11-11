@@ -1,5 +1,5 @@
 from enum import Enum
-from energy import EnergyAsset, AmbientTempTypeEnum
+from .energy import EnergyAsset, AmbientTempTypeEnum
 
 
 class ConversionAssetTypeEnum(Enum):

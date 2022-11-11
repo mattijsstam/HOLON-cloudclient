@@ -1,5 +1,5 @@
 from enum import Enum
-from energy import EnergyAsset
+from .energy import EnergyAsset
 
 
 class ConsumptionAssetTypeEnum(Enum):
