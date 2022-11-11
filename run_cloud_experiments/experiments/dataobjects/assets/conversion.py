@@ -1,5 +1,5 @@
 from enum import Enum
-from energy_asset import EnergyAsset
+from energy import EnergyAsset, AmbientTempTypeEnum
 
 
 class ConversionAssetTypeEnum(Enum):
@@ -17,13 +17,9 @@ class ConversionAsset(EnergyAsset):
     asset_type: ConversionAssetTypeEnum
     eta_r: float
 
+
 class ElectricCoversionAsset(ConversionAsset):
-    capacityElectricity_kW : float
-
-
-class AmbientTempTypeEnum(str, Enum):
-    air = "AIR"
-    ground = "GROUND"
+    capacityElectricity_kW: float
 
 
 class HeatConversionAsset(ConversionAsset):

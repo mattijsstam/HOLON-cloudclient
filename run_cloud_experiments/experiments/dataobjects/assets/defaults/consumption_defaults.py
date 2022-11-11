@@ -1,4 +1,4 @@
-from consumption_assets import HeatConsumptionAsset, ElectricConsumptionAsset
+from consumption import HeatConsumptionAsset, ElectricConsumptionAsset
 
 Industry_steel_electricity = ElectricConsumptionAsset(
     asset_type="ELECTRICITY_DEMAND",

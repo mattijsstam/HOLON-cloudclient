@@ -1,11 +1,11 @@
-from .energy_asset import EnergyAsset
-from .consumption_assets import (
+from .energy import EnergyAsset
+from .consumption import (
     ConsumptionAsset,
     HeatConsumptionAsset,
     ElectricConsumptionAsset,
     HybridConsumptionAsset,
 )
-from .conversion_assets import (
+from .conversion import (
     ConversionAsset,
     ElectricCoversionAsset,
     ElectricHeatConversionAsset,
@@ -13,9 +13,15 @@ from .conversion_assets import (
     TransportHeatConversionAsset,
     HybridHeatCoversionAsset,
 )
-from .production_assets import (
+from .production import (
     ProductionAsset,
     ElectricProductionAsset,
     HeatProductionAsset,
     HybridProductionAsset,
+)
+from .storage import (
+    StorageAsset,
+    ElectricStorageAsset,
+    HeatStorageAsset,
+    VehicleElectricStorageAsset,
 )

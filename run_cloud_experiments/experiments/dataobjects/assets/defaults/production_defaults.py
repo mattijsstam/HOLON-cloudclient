@@ -1,4 +1,4 @@
-from production_assets import ElectricProductionAsset
+from production import ElectricProductionAsset
 
 
 House_solarpanels_S = ElectricProductionAsset(

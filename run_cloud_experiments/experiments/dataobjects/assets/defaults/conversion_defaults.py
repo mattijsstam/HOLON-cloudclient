@@ -1,4 +1,4 @@
-from conversion_assets import (
+from conversion import (
     ElectricCoversionAsset,
     ChemicalHeatConversionAsset,
     TransportHeatConversionAsset,
