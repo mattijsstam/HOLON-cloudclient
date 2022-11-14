@@ -173,4 +173,7 @@ if __name__ == "__main__":
         variable_filename = f"example_{key}.json"
         fp = base_path / variable_filename
         with open(fp, "w") as outfile:
-            json.dump(json_output, outfile, indent=4)
+            json.dump(json_output, outfile, indent=2)
+
+    with open(base_path / "example_total.json", "w") as outfile:
+        json.dump(json.loads(payload.json()), outfile, indent=2)
