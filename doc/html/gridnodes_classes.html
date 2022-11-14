@@ -5,27 +5,32 @@
     
         classDiagram
           class ElectricGridNode {
-            grid_type
+            category : str
+            type
           }
           class ElectricGridTypeEnum {
+            name
+          }
+          class EnergyTypeEnum {
             name
           }
           class GridNode {
             capacity_kw : float
             id : str
             owner_actor : str
-            parent : str
+            parent : Optional[str]
           }
           class HeatGridNode {
-            grid_type
+            category : str
+            type
           }
           class HeatGridTypeEnum {
             name
           }
           ElectricGridNode --|> GridNode
           HeatGridNode --|> GridNode
-          ElectricGridTypeEnum --* ElectricGridNode : grid_type
-          HeatGridTypeEnum --* HeatGridNode : grid_type
+          ElectricGridTypeEnum --* ElectricGridNode : type
+          HeatGridTypeEnum --* HeatGridNode : type
   
        </div>
   </body>

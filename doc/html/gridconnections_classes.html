@@ -1,0 +1,86 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class BuildingGridConnection {
+            category : str
+            type
+          }
+          class BuildingTypeEnum {
+            name
+          }
+          class BuiltEnvironmentGridConnection {
+            category : str
+            heating_type
+            insulation_label
+          }
+          class DistrictHeatingGridConnection {
+            category : str
+            type
+          }
+          class DistrictHeatingTypeEnum {
+            name
+          }
+          class GridCategoryEnum {
+            name
+          }
+          class GridConnection {
+            assets : Optional[List[EnergyAsset]]
+            capacity_kw : float
+            category : str
+            id : str
+            owner_actor : str
+            parent_electric : str
+            parent_heat : Optional[str]
+          }
+          class HeatingTypeEnum {
+            name
+          }
+          class HouseGridConnection {
+            category : str
+            type
+          }
+          class HousingTypeEnum {
+            name
+          }
+          class IndustryGridConnection {
+            category : str
+            type
+          }
+          class IndustryTypeEnum {
+            name
+          }
+          class InsulationLabelEnum {
+            name
+          }
+          class ProductionCategoryEnum {
+            name
+          }
+          class ProductionGridConnection {
+            category
+          }
+          class UtilityGridConnection {
+            category : str
+            heating_type
+          }
+          BuildingGridConnection --|> BuiltEnvironmentGridConnection
+          BuiltEnvironmentGridConnection --|> GridConnection
+          DistrictHeatingGridConnection --|> UtilityGridConnection
+          HouseGridConnection --|> BuiltEnvironmentGridConnection
+          IndustryGridConnection --|> UtilityGridConnection
+          ProductionGridConnection --|> GridConnection
+          UtilityGridConnection --|> GridConnection
+          BuildingTypeEnum --* BuildingGridConnection : type
+          DistrictHeatingTypeEnum --* DistrictHeatingGridConnection : type
+          HeatingTypeEnum --* BuiltEnvironmentGridConnection : heating_type
+          HeatingTypeEnum --* UtilityGridConnection : heating_type
+          HousingTypeEnum --* HouseGridConnection : type
+          IndustryTypeEnum --* IndustryGridConnection : type
+          InsulationLabelEnum --* BuiltEnvironmentGridConnection : insulation_label
+          ProductionCategoryEnum --* ProductionGridConnection : category
+  
+       </div>
+  </body>
+</html>

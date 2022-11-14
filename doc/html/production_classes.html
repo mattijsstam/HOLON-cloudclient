@@ -13,8 +13,10 @@
           class HybridProductionAsset {
           }
           class ProductionAsset {
-            alias : str
-            asset_type
+            category : str
+            etm_key : Optional[str]
+            name : str
+            type
           }
           class ProductionAssetTypeEnum {
             name
@@ -23,7 +25,7 @@
           HeatProductionAsset --|> ProductionAsset
           HybridProductionAsset --|> ElectricProductionAsset
           HybridProductionAsset --|> HeatProductionAsset
-          ProductionAssetTypeEnum --* ProductionAsset : asset_type
+          ProductionAssetTypeEnum --* ProductionAsset : type
   
        </div>
   </body>

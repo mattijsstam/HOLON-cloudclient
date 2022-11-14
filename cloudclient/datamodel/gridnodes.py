@@ -1,13 +1,19 @@
 from pydantic import BaseModel, Extra
+from typing import Optional
 
 from enum import Enum
+
+
+class EnergyTypeEnum(Enum):
+    electricity = "ELECTRICITY"
+    heat = "HEAT"
 
 
 class GridNode(BaseModel, extra=Extra.forbid):
     owner_actor: str
     id: str
     capacity_kw: float
-    parent: str
+    parent: Optional[str]
 
 
 class ElectricGridTypeEnum(Enum):
@@ -16,7 +22,8 @@ class ElectricGridTypeEnum(Enum):
 
 
 class ElectricGridNode(GridNode):
-    grid_type: ElectricGridTypeEnum
+    type: ElectricGridTypeEnum
+    category = "ELECTRICITY"
 
 
 class HeatGridTypeEnum(Enum):
@@ -25,4 +32,5 @@ class HeatGridTypeEnum(Enum):
 
 
 class HeatGridNode(GridNode):
-    grid_type: HeatGridTypeEnum
+    type: HeatGridTypeEnum
+    category = "HEAT"

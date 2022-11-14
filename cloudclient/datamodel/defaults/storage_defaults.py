@@ -1,17 +1,19 @@
-from storage import (
+from cloudclient.datamodel import (
     HeatStorageAsset,
     ElectricStorageAsset,
     VehicleElectricStorageAsset,
 )
 
 House_battery = ElectricStorageAsset(
-    asset_type="STORAGE_ELECTRIC",
+    name="House_battery",
+    type="STORAGE_ELECTRIC",
     capacityElectricity_kW=10,
     stateOfCharge_r=1.0,
     storageCapacity_kWh=50,
 )
 House_heatmodel_A = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="House_heatmodel_A",
+    type="STORAGE_HEAT",
     capacityHeat_kW=100.0,
     stateOfCharge_r=0.5,
     minTemp_degC=-10,
@@ -22,7 +24,8 @@ House_heatmodel_A = HeatStorageAsset(
     ambientTempType="AIR",
 )
 House_heatmodel_B = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="House_heatmodel_B",
+    type="STORAGE_HEAT",
     capacityHeat_kW=100.0,
     stateOfCharge_r=0.5,
     minTemp_degC=-10,
@@ -33,7 +36,8 @@ House_heatmodel_B = HeatStorageAsset(
     ambientTempType="AIR",
 )
 House_heatmodel_C = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="House_heatmodel_C",
+    type="STORAGE_HEAT",
     capacityHeat_kW=100.0,
     stateOfCharge_r=0.5,
     minTemp_degC=-10,
@@ -44,7 +48,8 @@ House_heatmodel_C = HeatStorageAsset(
     ambientTempType="AIR",
 )
 House_heatmodel_D = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="House_heatmodel_D",
+    type="STORAGE_HEAT",
     capacityHeat_kW=100.0,
     stateOfCharge_r=0.5,
     minTemp_degC=-10,
@@ -55,7 +60,8 @@ House_heatmodel_D = HeatStorageAsset(
     ambientTempType="AIR",
 )
 House_heatmodel_E = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="House_heatmodel_E",
+    type="STORAGE_HEAT",
     capacityHeat_kW=100.0,
     stateOfCharge_r=0.5,
     minTemp_degC=-10,
@@ -66,7 +72,8 @@ House_heatmodel_E = HeatStorageAsset(
     ambientTempType="AIR",
 )
 House_heatmodel_F = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="House_heatmodel_F",
+    type="STORAGE_HEAT",
     capacityHeat_kW=100.0,
     stateOfCharge_r=0.5,
     minTemp_degC=-10,
@@ -77,7 +84,8 @@ House_heatmodel_F = HeatStorageAsset(
     ambientTempType="AIR",
 )
 House_heatmodel_G = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="House_heatmodel_G",
+    type="STORAGE_HEAT",
     capacityHeat_kW=100.0,
     stateOfCharge_r=0.5,
     minTemp_degC=-10,
@@ -88,14 +96,16 @@ House_heatmodel_G = HeatStorageAsset(
     ambientTempType="AIR",
 )
 EV = VehicleElectricStorageAsset(
-    asset_type="ELECTRIC_VEHICLE",
+    name="EV",
+    type="ELECTRIC_VEHICLE",
     capacityElectricity_kW=11,
     stateOfCharge_r=1.0,
     storageCapacity_kWh=50,
-    energy_consumption_kwhpkm = 0.2,
+    energy_consumption_kwhpkm=0.2,
 )
 District_Heating_heat_buffer_HT_S = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="District_Heating_heat_buffer_HT_S",
+    type="STORAGE_HEAT",
     capacityHeat_kW=1000.0,
     stateOfCharge_r=0.75,
     minTemp_degC=10,
@@ -106,7 +116,8 @@ District_Heating_heat_buffer_HT_S = HeatStorageAsset(
     ambientTempType="GROUND",
 )
 District_Heating_network_HT_S = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="District_Heating_network_HT_S",
+    type="STORAGE_HEAT",
     capacityHeat_kW=1000.0,
     stateOfCharge_r=1.0,
     minTemp_degC=70,
@@ -117,7 +128,8 @@ District_Heating_network_HT_S = HeatStorageAsset(
     ambientTempType="GROUND",
 )
 District_Heating_network_MT_S = HeatStorageAsset(
-    asset_type="STORAGE_HEAT",
+    name="District_Heating_network_MT_S",
+    type="STORAGE_HEAT",
     capacityHeat_kW=1000.0,
     stateOfCharge_r=1.0,
     minTemp_degC=60,
@@ -128,20 +140,23 @@ District_Heating_network_MT_S = HeatStorageAsset(
     ambientTempType="GROUND",
 )
 Grid_battery_1MW = ElectricStorageAsset(
-    asset_type="STORAGE_ELECTRIC",
+    name="Grid_battery_1MW",
+    type="STORAGE_ELECTRIC",
     capacityElectricity_kW=1000,
     stateOfCharge_r=1.0,
     storageCapacity_kWh=1000,
 )
 EHGV = VehicleElectricStorageAsset(
-    asset_type="ELECTRIC_HEAVY_GOODS_VEHICLE",
+    name="EHGV",
+    type="ELECTRIC_HEAVY_GOODS_VEHICLE",
     capacityElectricity_kW=110,
     stateOfCharge_r=1.0,
     storageCapacity_kWh=500,
     energy_consumption_kwhpkm=1,
 )
-Grid_battery_10M = ElectricStorageAsset(
-    asset_type="STORAGE_ELECTRIC",
+Grid_battery_10MWh = ElectricStorageAsset(
+    name="Grid_battery_10MWh",
+    type="STORAGE_ELECTRIC",
     capacityElectricity_kW=2000,
     stateOfCharge_r=1.0,
     storageCapacity_kWh=10000,

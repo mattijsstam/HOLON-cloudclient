@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Extra
 from enum import Enum
+from typing import Optional
 
 
 class ActorTypeEnum(Enum):
@@ -9,7 +10,11 @@ class ActorTypeEnum(Enum):
     energysupplier = "ENERGYSUPPLIER"
 
 
+class SubTypeEnum(Enum):
+    commercial = "commercial"
+
 class Actor(BaseModel, extra=Extra.forbid):
-    actor_type: ActorTypeEnum
+    category: ActorTypeEnum
+    type: Optional[SubTypeEnum]
     id: str
     parent_actor: str
