@@ -9,7 +9,15 @@ class ActorTypeEnum(Enum):
     energysupplier = "ENERGYSUPPLIER"
 
 
+class SubTypeEnum(Enum):
+    commercial = "commercial"
+    energysupplier = "energysupplier"
+    holon = "holon"
+    gridoperator = "gridoperator"
+
+
 class Actor(BaseModel, extra=Extra.forbid):
     actor_type: ActorTypeEnum
     id: str
     parent_actor: str
+    subtype: str

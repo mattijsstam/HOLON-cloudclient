@@ -1,6 +1,9 @@
 from pydantic import BaseModel, Extra
-from typing import Mapping, Union
+from typing import Optional
 
 
-class HOLONConfig(BaseModel, extra=Extra.forbid):
-    parameters: Mapping[str, Mapping[str, Union[str, None]]]
+class Policy(BaseModel, extra=Extra.forbid):
+    parameter: str
+    value: str
+    unit: Optional[str]
+    comment: str

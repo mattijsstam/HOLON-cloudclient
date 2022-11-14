@@ -8,4 +8,4 @@ from .assets.production import *
 from .assets.storage import *
 from .toplevel import Payload
 from .defaults import *
-from .config import HOLONConfig
+from .config import Policy
