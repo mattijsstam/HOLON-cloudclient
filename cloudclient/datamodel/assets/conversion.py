@@ -1,5 +1,6 @@
 from enum import Enum
 from cloudclient.datamodel.assets.energy import EnergyAsset, AmbientTempTypeEnum
+from typing import Optional
 
 
 class ConversionAssetTypeEnum(Enum):
@@ -16,7 +17,7 @@ class ConversionAssetTypeEnum(Enum):
 class ConversionAsset(EnergyAsset):
     asset_type: ConversionAssetTypeEnum
     eta_r: float
-
+    etm_key: Optional[str]
 
 class ElectricCoversionAsset(ConversionAsset):
     capacityElectricity_kW: float

@@ -1,4 +1,6 @@
 from enum import Enum
+from typing import Optional
+
 from cloudclient.datamodel.assets.energy import EnergyAsset
 
 
@@ -11,6 +13,7 @@ class ConsumptionAssetTypeEnum(Enum):
 
 class ConsumptionAsset(EnergyAsset):
     asset_type: ConsumptionAssetTypeEnum
+    etm_key: Optional[str]
 
 
 class HeatConsumptionAsset(ConsumptionAsset):

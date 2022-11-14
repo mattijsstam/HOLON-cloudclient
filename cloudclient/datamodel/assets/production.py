@@ -1,6 +1,6 @@
 from cloudclient.datamodel.assets.energy import EnergyAsset
 from enum import Enum
-
+from typing import Optional
 
 class ProductionAssetTypeEnum(Enum):
     photovoltaic = "PHOTOVOLTAIC"
@@ -10,6 +10,7 @@ class ProductionAssetTypeEnum(Enum):
 class ProductionAsset(EnergyAsset):
     asset_type: ProductionAssetTypeEnum
     alias: str
+    etm_key: Optional[str]
 
 
 class ElectricProductionAsset(ProductionAsset):
