@@ -7,29 +7,33 @@
     "parent_heat": null,
     "assets": [
       {
-        "asset_type": "ELECTRICITY_DEMAND",
+        "type": "ELECTRICITY_DEMAND",
         "etm_key": "logistics_fleet_e_hgv",
         "name": "Logistics_fleet_hgv_E",
+        "category": "CONSUMPTION",
         "yearlyDemandElectricity_kWh": 6500000.0
       },
       {
-        "asset_type": "PHOTOVOLTAIC",
+        "type": "PHOTOVOLTAIC",
         "etm_key": "Solar panels for building, 0 kWp",
         "name": "Building_solarpanels_0kWp",
+        "category": "PRODUCTION",
         "capacityElectricity_kW": 0.0
       },
       {
-        "asset_type": "GAS_BURNER",
+        "type": "GAS_BURNER",
         "eta_r": 0.95,
         "etm_key": null,
         "name": "Building_gas_burner_60kW",
+        "category": "CONVERSION",
         "deliveryTemp_degc": 90.0,
         "capacityHeat_kW": 60.0
       }
     ],
+    "category": "BUILDING",
     "insulation_label": "NONE",
     "heating_type": "GASBURNER",
-    "grid_type": "LOGISTICS"
+    "type": "LOGISTICS"
   },
   {
     "owner_actor": "com2",
@@ -39,22 +43,25 @@
     "parent_heat": null,
     "assets": [
       {
-        "asset_type": "PHOTOVOLTAIC",
+        "type": "PHOTOVOLTAIC",
         "etm_key": "Solar panels for building, 0 kWp",
         "name": "Building_solarpanels_0kWp",
+        "category": "PRODUCTION",
         "capacityElectricity_kW": 0.0
       },
       {
-        "asset_type": "GAS_BURNER",
+        "type": "GAS_BURNER",
         "eta_r": 0.95,
         "etm_key": null,
         "name": "Building_gas_burner_60kW",
+        "category": "CONVERSION",
         "deliveryTemp_degc": 90.0,
         "capacityHeat_kW": 60.0
       }
     ],
+    "category": "INDUSTRY",
     "heating_type": "GASBURNER",
-    "grid_type": "INDUSTRY_OTHER"
+    "type": "INDUSTRY_OTHER"
   },
   {
     "owner_actor": "com3",
@@ -64,19 +71,21 @@
     "parent_heat": null,
     "assets": [
       {
-        "asset_type": "PHOTOVOLTAIC",
+        "type": "PHOTOVOLTAIC",
         "etm_key": "Solar field 1 MW",
         "name": "Solarpanels_1MW",
+        "category": "PRODUCTION",
         "capacityElectricity_kW": 1000.0
       },
       {
-        "asset_type": "PHOTOVOLTAIC",
+        "type": "PHOTOVOLTAIC",
         "etm_key": "Solar field 1 MW",
         "name": "Solarpanels_1MW",
+        "category": "PRODUCTION",
         "capacityElectricity_kW": 1000.0
       }
     ],
-    "grid_type": "SOLARFARM"
+    "category": "SOLARFARM"
   },
   {
     "owner_actor": "com4",
@@ -86,14 +95,15 @@
     "parent_heat": null,
     "assets": [
       {
-        "asset_type": "STORAGE_ELECTRIC",
+        "type": "STORAGE_ELECTRIC",
         "stateOfCharge_r": 1.0,
         "etm_key": null,
         "name": "Grid_battery_10MWh",
+        "category": "STORAGE",
         "capacityElectricity_kW": 2000.0,
         "storageCapacity_kWh": 10000.0
       }
     ],
-    "grid_type": "GRIDBATTERY"
+    "category": "GRIDBATTERY"
   }
 ]

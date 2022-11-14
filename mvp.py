@@ -11,41 +11,37 @@ if __name__ == "__main__":
 
     actors = [
         Actor(
-            actor_type="CONNECTIONOWNER",
-            subtype="commercial",
+            category="CONNECTIONOWNER",
+            type="commercial",
             id="com1",
             parent_actor="hol1",
         ),
         Actor(
-            actor_type="CONNECTIONOWNER",
-            subtype="commercial",
+            category="CONNECTIONOWNER",
+            type="commercial",
             id="com2",
             parent_actor="hol1",
         ),
         Actor(
-            actor_type="CONNECTIONOWNER",
-            subtype="commercial",
+            category="CONNECTIONOWNER",
+            type="commercial",
             id="com3",
             parent_actor="hol1",
         ),
         Actor(
-            actor_type="CONNECTIONOWNER",
-            subtype="commercial",
+            category="CONNECTIONOWNER",
+            type="commercial",
             id="com4",
             parent_actor="hol1",
         ),
         Actor(
-            actor_type="ENERGYSUPPLIER",
-            subtype="energysupplier",
+            category="ENERGYSUPPLIER",
             id="sup1",
             parent_actor="nat",
         ),
+        Actor(category="ENERGYHOLON", id="hol1", parent_actor="sup1"),
         Actor(
-            actor_type="ENERGYHOLON", subtype="holon", id="hol1", parent_actor="sup1"
-        ),
-        Actor(
-            actor_type="GRIDOPERATOR",
-            subtype="gridoperator",
+            category="GRIDOPERATOR",
             id="o1",
             parent_actor="nat",
         ),
@@ -69,7 +65,7 @@ if __name__ == "__main__":
         BuildingGridConnection(
             insulation_label="NONE",
             heating_type="GASBURNER",
-            grid_type="LOGISTICS",
+            type="LOGISTICS",
             owner_actor="com1",
             parent_electric="E2",
             id="b1",
@@ -82,7 +78,7 @@ if __name__ == "__main__":
         ),
         IndustryGridConnection(
             heating_type="GASBURNER",
-            grid_type="INDUSTRY_OTHER",
+            type="INDUSTRY_OTHER",
             owner_actor="com2",
             parent_electric="E2",
             id="b2",
@@ -90,7 +86,7 @@ if __name__ == "__main__":
             assets=[Building_solarpanels_0kWp, Building_gas_burner_60kW],
         ),
         ProductionGridConnection(
-            grid_type="SOLARFARM",
+            category="SOLARFARM",
             owner_actor="com3",
             parent_electric="E2",
             id="b3",
@@ -98,7 +94,7 @@ if __name__ == "__main__":
             assets=[Solarpanels_1MW, Solarpanels_1MW],
         ),
         ProductionGridConnection(
-            grid_type="GRIDBATTERY",
+            category="GRIDBATTERY",
             owner_actor="com4",
             parent_electric="E2",
             id="b4",
@@ -111,10 +107,19 @@ if __name__ == "__main__":
 
     gridnodes = [
         ElectricGridNode(
-            id="E2", parent="E1", owner_actor="o1", capacity_kw=1200, grid_type="MSLS"
+            id="E2",
+            parent="E1",
+            owner_actor="o1",
+            capacity_kw=1200,
+            category="ELECTRICITY",
+            type="MSLS",
         ),
         ElectricGridNode(
-            id="E1", owner_actor="o1", capacity_kw=500000, grid_type="HSMS"
+            id="E1",
+            owner_actor="o1",
+            capacity_kw=500000,
+            category="ELECTRICITY",
+            type="HSMS",
         ),
     ]
 

@@ -12,10 +12,10 @@ class ConsumptionAssetTypeEnum(Enum):
 
 
 class ConsumptionAsset(EnergyAsset):
-    asset_type: ConsumptionAssetTypeEnum
+    category = "CONSUMPTION"
+    type: ConsumptionAssetTypeEnum
     etm_key: Optional[str]
     name: str
-
 
 class HeatConsumptionAsset(ConsumptionAsset):
     yearlyDemandHeat_kWh: float
@@ -27,16 +27,3 @@ class ElectricConsumptionAsset(ConsumptionAsset):
 
 class HybridConsumptionAsset(ElectricConsumptionAsset, HeatConsumptionAsset):
     pass
-
-
-if __name__ == "__main__":
-
-    dummy_data = {
-        "asset_type": "HOT_WATER_CONSUMPTION",
-        "yearlyDemandHeat_kWh": 30,
-    }
-
-    asset = HeatConsumptionAsset(**dummy_data)
-    import json
-
-    print(json.dumps(json.loads(asset.json()), indent=4))

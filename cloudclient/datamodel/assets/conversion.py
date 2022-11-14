@@ -15,7 +15,8 @@ class ConversionAssetTypeEnum(Enum):
 
 
 class ConversionAsset(EnergyAsset):
-    asset_type: ConversionAssetTypeEnum
+    category = "CONVERSION"
+    type: ConversionAssetTypeEnum
     eta_r: float
     etm_key: Optional[str]
     name: str
@@ -45,18 +46,3 @@ class HybridHeatCoversionAsset(
     TransportHeatConversionAsset, ChemicalHeatConversionAsset
 ):
     pass
-
-
-if __name__ == "__main__":
-    dummy_data = {
-        "asset_type": "BOILER",
-        "capacityElectricity_kW": 300,
-        "eta_r": "0.99",
-        "deliveryTemp_degc": 100,
-        "ambientTempType": "AIR",
-    }
-
-    asset = TransportHeatConversionAsset(**dummy_data)
-    import json
-
-    print(json.dumps(json.loads(asset.json()), indent=4))

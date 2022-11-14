@@ -2,13 +2,15 @@ from cloudclient.datamodel.assets.energy import EnergyAsset
 from enum import Enum
 from typing import Optional
 
+
 class ProductionAssetTypeEnum(Enum):
     photovoltaic = "PHOTOVOLTAIC"
     windmill = "WINDMILL"
 
 
 class ProductionAsset(EnergyAsset):
-    asset_type: ProductionAssetTypeEnum
+    category = "PRODUCTION"
+    type: ProductionAssetTypeEnum
     etm_key: Optional[str]
     name: str
 
@@ -23,20 +25,3 @@ class HeatProductionAsset(ProductionAsset):
 
 class HybridProductionAsset(ElectricProductionAsset, HeatProductionAsset):
     pass
-
-
-if __name__ == "__main__":
-
-    dummy_data = {
-        "alias": "XL windmill",
-        "asset_type": "WINDMILL",
-        "capacityElectricity_kW": 7000.0,
-    }
-
-    asset = ElectricProductionAsset(**dummy_data)
-    import json
-
-    print(json.dumps(json.loads(asset.json()), indent=4))
-
-    # to generate the class diagram
-    # pyreverse <filename> -o html
