@@ -140,7 +140,7 @@ EHGV = VehicleElectricStorageAsset(
     storageCapacity_kWh=500,
     energy_consumption_kwhpkm=1,
 )
-Grid_battery_10M = ElectricStorageAsset(
+Grid_battery_10MWh = ElectricStorageAsset(
     asset_type="STORAGE_ELECTRIC",
     capacityElectricity_kW=2000,
     stateOfCharge_r=1.0,

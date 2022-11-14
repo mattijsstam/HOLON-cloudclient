@@ -13,6 +13,7 @@ class GridConnection(BaseModel, extra=Extra.forbid):
     parent_heat: Optional[str]
     assets: Optional[List[EnergyAsset]]
 
+
 class InsulationLabelEnum(Enum):
     a = "A"
     b = "B"
@@ -21,6 +22,7 @@ class InsulationLabelEnum(Enum):
     e = "E"
     f = "F"
     g = "G"
+    none = "NONE"
 
 
 class HeatingTypeEnum(Enum):
@@ -33,12 +35,12 @@ class HeatingTypeEnum(Enum):
     none = "NONE"
 
 
-class BuiltEnvironment(GridConnection):
+class BuiltEnvironmentGridConnection(GridConnection):
     insulation_label: InsulationLabelEnum
     heating_type: HeatingTypeEnum
 
 
-class Utility(GridConnection):
+class UtilityGridConnection(GridConnection):
     heating_type: HeatingTypeEnum
 
 
@@ -48,26 +50,28 @@ class HousingTypeEnum(Enum):
     detached = "DETACHED"
 
 
-class House(BuiltEnvironment):
-    housing_type: HousingTypeEnum
+class HouseGridConnection(BuiltEnvironmentGridConnection):
+    grid_type: HousingTypeEnum
 
 
 class BuildingTypeEnum(Enum):
     store = "STORE"
     office = "OFFICE"
+    logistics = "LOGISTICS"
 
 
-class Building(BuiltEnvironment):
-    building_type: BuildingTypeEnum
+class BuildingGridConnection(BuiltEnvironmentGridConnection):
+    grid_type: BuildingTypeEnum
 
 
-class ProductionSiteEnum(Enum):
+class ProductionEnum(Enum):
     windfarm = "WINDFARM"
     solarfarm = "SOLARFARM"
+    gridbattery = "GRIDBATTERY"
 
 
-class ProductionSite(GridConnection):
-    grid_type: ProductionSiteEnum
+class ProductionGridConnection(GridConnection):
+    grid_type: ProductionEnum
 
 
 class IndustryTypeEnum(Enum):
@@ -75,8 +79,8 @@ class IndustryTypeEnum(Enum):
     industry_other = "INDUSTRY_OTHER"
 
 
-class Industry(Utility):
-    industry_type: IndustryTypeEnum
+class IndustryGridConnection(UtilityGridConnection):
+    grid_type: IndustryTypeEnum
 
 
 class DistrictHeatingTypeEnum(Enum):
@@ -84,5 +88,5 @@ class DistrictHeatingTypeEnum(Enum):
     ht = "HT"
 
 
-class DistrictHeating(Utility):
+class DistrictHeatingGridConnection(UtilityGridConnection):
     district_heating_type: DistrictHeatingTypeEnum
