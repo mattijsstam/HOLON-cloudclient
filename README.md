@@ -12,6 +12,7 @@ multiple experiments sequentially. No more adjusting classes! Based on the exist
   - [Running the module](#running-the-module)
   - [Pipenv support](#pipenv-support)
   - [Data classes](#data-classes)
+    - [Examples](#examples)
 
 ## Installation
 
@@ -71,9 +72,16 @@ Happy experimenting!
 
 Data classes are used to structure and validate data before it is sent to the AnyLogic API. Find the class diagrams below:
 
-1. [Grid connections](htmls\gridconnection_classes.html)
-2. [Conversion assets](htmls\conversion_classes.html)
-3. [Consumption assets](htmls\consumption_classes.html)
-4. [Storage assets](htmls\storage_classes.html)
-5. [Production assets](htmls\production_classes.html)
-6. [Gridnode assets](htmls\gridnode_classes.html)
+1. [Grid connections](doc/html/gridconnections_classes.html)
+2. [Conversion assets](doc/html/conversion_classes.html)
+3. [Consumption assets](doc/html/consumption_classes.html)
+4. [Storage assets](doc/html/storage_classes.html)
+5. [Production assets](doc/html/production_classes.html)
+6. [Gridnode assets](doc/html/gridnodes_classes.html)
+
+### Examples
+
+Check out the example JSON file over at: [doc/assets/example.json](doc/assets/example.json).
+
+Or inspect the visual representation below:
+![](doc/img/example.png)

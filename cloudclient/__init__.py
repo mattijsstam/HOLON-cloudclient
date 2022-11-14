@@ -1,1 +1,1 @@
-from .datamodel import assets, gridconnections, gridnodes, defaults, actors
+from .datamodel import *

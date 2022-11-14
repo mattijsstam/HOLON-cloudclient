@@ -5,6 +5,11 @@ from cloudclient.datamodel.assets import EnergyAsset
 from enum import Enum
 
 
+class GridCategoryEnum(Enum):
+    building = "BUILDING"
+    industry = "INDUSTRY"
+
+
 class GridConnection(BaseModel, extra=Extra.forbid):
     owner_actor: str
     id: str
@@ -12,6 +17,8 @@ class GridConnection(BaseModel, extra=Extra.forbid):
     parent_electric: str
     parent_heat: Optional[str]
     assets: Optional[List[EnergyAsset]]
+    category = "GENERIC"
+
 
 class InsulationLabelEnum(Enum):
     a = "A"
@@ -21,6 +28,7 @@ class InsulationLabelEnum(Enum):
     e = "E"
     f = "F"
     g = "G"
+    none = "NONE"
 
 
 class HeatingTypeEnum(Enum):
@@ -33,12 +41,14 @@ class HeatingTypeEnum(Enum):
     none = "NONE"
 
 
-class BuiltEnvironment(GridConnection):
+class BuiltEnvironmentGridConnection(GridConnection):
+    category = "BUILT_ENVIRONMENT"
     insulation_label: InsulationLabelEnum
     heating_type: HeatingTypeEnum
 
 
-class Utility(GridConnection):
+class UtilityGridConnection(GridConnection):
+    category = "UTILITY"
     heating_type: HeatingTypeEnum
 
 
@@ -48,26 +58,30 @@ class HousingTypeEnum(Enum):
     detached = "DETACHED"
 
 
-class House(BuiltEnvironment):
-    housing_type: HousingTypeEnum
+class HouseGridConnection(BuiltEnvironmentGridConnection):
+    category = "HOUSE"
+    type: HousingTypeEnum
 
 
 class BuildingTypeEnum(Enum):
     store = "STORE"
     office = "OFFICE"
+    logistics = "LOGISTICS"
 
 
-class Building(BuiltEnvironment):
-    building_type: BuildingTypeEnum
+class BuildingGridConnection(BuiltEnvironmentGridConnection):
+    category = "BUILDING"
+    type: BuildingTypeEnum
 
 
-class ProductionSiteEnum(Enum):
+class ProductionCategoryEnum(Enum):
     windfarm = "WINDFARM"
     solarfarm = "SOLARFARM"
+    gridbattery = "GRIDBATTERY"
 
 
-class ProductionSite(GridConnection):
-    grid_type: ProductionSiteEnum
+class ProductionGridConnection(GridConnection):
+    category: ProductionCategoryEnum
 
 
 class IndustryTypeEnum(Enum):
@@ -75,8 +89,9 @@ class IndustryTypeEnum(Enum):
     industry_other = "INDUSTRY_OTHER"
 
 
-class Industry(Utility):
-    industry_type: IndustryTypeEnum
+class IndustryGridConnection(UtilityGridConnection):
+    category = "INDUSTRY"
+    type: IndustryTypeEnum
 
 
 class DistrictHeatingTypeEnum(Enum):
@@ -84,5 +99,6 @@ class DistrictHeatingTypeEnum(Enum):
     ht = "HT"
 
 
-class DistrictHeating(Utility):
-    district_heating_type: DistrictHeatingTypeEnum
+class DistrictHeatingGridConnection(UtilityGridConnection):
+    category = "DISTRICT_HEATING"
+    type: DistrictHeatingTypeEnum

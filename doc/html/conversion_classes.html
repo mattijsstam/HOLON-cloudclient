@@ -4,21 +4,18 @@
       <div class="mermaid">
     
         classDiagram
-          class AmbientTempTypeEnum {
-            name
-          }
           class ChemicalHeatConversionAsset {
             capacityHeat_kW : float
           }
           class ConversionAsset {
-            asset_type
+            category : str
             eta_r : float
+            etm_key : Optional[str]
+            name : str
+            type
           }
           class ConversionAssetTypeEnum {
             name
-          }
-          class DefaultEnergyAsset {
-            name : str
           }
           class ElectricCoversionAsset {
             capacityElectricity_kW : float
@@ -26,27 +23,22 @@
           class ElectricHeatConversionAsset {
             capacityElectricity_kW : float
           }
-          class EnergyAsset {
-          }
           class HeatConversionAsset {
             deliveryTemp_degc : float
           }
           class HybridHeatCoversionAsset {
           }
           class TransportHeatConversionAsset {
-            ambientTempType
+            ambientTempType : AmbientTempTypeEnum
           }
           ChemicalHeatConversionAsset --|> HeatConversionAsset
-          ConversionAsset --|> EnergyAsset
-          DefaultEnergyAsset --|> EnergyAsset
           ElectricCoversionAsset --|> ConversionAsset
           ElectricHeatConversionAsset --|> HeatConversionAsset
           HeatConversionAsset --|> ConversionAsset
           HybridHeatCoversionAsset --|> ChemicalHeatConversionAsset
           HybridHeatCoversionAsset --|> TransportHeatConversionAsset
           TransportHeatConversionAsset --|> ElectricHeatConversionAsset
-          AmbientTempTypeEnum --* TransportHeatConversionAsset : ambientTempType
-          ConversionAssetTypeEnum --* ConversionAsset : asset_type
+          ConversionAssetTypeEnum --* ConversionAsset : type
   
        </div>
   </body>

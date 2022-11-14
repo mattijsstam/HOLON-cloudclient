@@ -5,7 +5,10 @@
     
         classDiagram
           class ConsumptionAsset {
-            asset_type
+            category : str
+            etm_key : Optional[str]
+            name : str
+            type
           }
           class ConsumptionAssetTypeEnum {
             name
@@ -22,7 +25,7 @@
           HeatConsumptionAsset --|> ConsumptionAsset
           HybridConsumptionAsset --|> ElectricConsumptionAsset
           HybridConsumptionAsset --|> HeatConsumptionAsset
-          ConsumptionAssetTypeEnum --* ConsumptionAsset : asset_type
+          ConsumptionAssetTypeEnum --* ConsumptionAsset : type
   
        </div>
   </body>

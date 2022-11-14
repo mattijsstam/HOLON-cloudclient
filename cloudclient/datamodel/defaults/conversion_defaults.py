@@ -1,11 +1,12 @@
-from conversion import (
+from cloudclient.datamodel import (
     ElectricCoversionAsset,
     ChemicalHeatConversionAsset,
     TransportHeatConversionAsset,
 )
 
 House_heatpump_MT_S = TransportHeatConversionAsset(
-    asset_type="HEAT_PUMP_AIR",
+    name="House_heatpump_MT_S",
+    type="HEAT_PUMP_AIR",
     capacityElectricity_kW=4,
     eta_r=0.5,
     deliveryTemp_degc=60,
@@ -13,7 +14,8 @@ House_heatpump_MT_S = TransportHeatConversionAsset(
 )
 
 House_heatpump_MT_M = TransportHeatConversionAsset(
-    asset_type="HEAT_PUMP_AIR",
+    name="House_heatpump_MT_M",
+    type="HEAT_PUMP_AIR",
     capacityElectricity_kW=6,
     eta_r=0.6,
     deliveryTemp_degc=60,
@@ -21,7 +23,8 @@ House_heatpump_MT_M = TransportHeatConversionAsset(
 )
 
 House_heatpump_MT_L = TransportHeatConversionAsset(
-    asset_type="HEAT_PUMP_AIR",
+    name="House_heatpump_MT_L",
+    type="HEAT_PUMP_AIR",
     capacityElectricity_kW=11,
     eta_r=0.6,
     deliveryTemp_degc=60,
@@ -29,35 +32,39 @@ House_heatpump_MT_L = TransportHeatConversionAsset(
 )
 
 House_gas_burner = ChemicalHeatConversionAsset(
-    asset_type="GAS_BURNER",
+    name="House_gas_burner",
+    type="GAS_BURNER",
     capacityHeat_kW=30,
     eta_r=0.95,
     deliveryTemp_degc=90,
 )
 
 House_DH_heatdeliveryset = ChemicalHeatConversionAsset(
-    asset_type="HEAT_DELIVERY_SET",
+    name="House_DH_heatdeliveryset",
+    type="HEAT_DELIVERY_SET",
     capacityHeat_kW=10,
     eta_r=0.99,
     deliveryTemp_degc=90,
-    ambientTempType="AIR",
 )
 
 Electrolyser = ElectricCoversionAsset(
-    asset_type="ELECTROLYSER",
+    name="Electrolyser",
+    type="ELECTROLYSER",
     capacityElectricity_kW=100,
     eta_r=0.6,
 )
 
 DH_gas_burner_S = ChemicalHeatConversionAsset(
-    asset_type="GAS_BURNER",
+    name="DH_gas_burner_S",
+    type="GAS_BURNER",
     capacityHeat_kW=300,
     eta_r=0.95,
     deliveryTemp_degc=90,
 )
 
 DH_heat_pump_HT_S = TransportHeatConversionAsset(
-    asset_type="HEAT_PUMP_GROUND",
+    name="DH_heat_pump_HT_S",
+    type="HEAT_PUMP_GROUND",
     capacityElectricity_kW=100,
     eta_r=0.5,
     deliveryTemp_degc=90,
@@ -65,35 +72,40 @@ DH_heat_pump_HT_S = TransportHeatConversionAsset(
 )
 
 DH_boiler_L = ChemicalHeatConversionAsset(
-    asset_type="BOILER",
+    name="DH_boiler_L",
+    type="BOILER",
     capacityHeat_kW=300,
     eta_r=0.99,
     deliveryTemp_degc=100,
 )
 
 Industrial_methane_furnace = ChemicalHeatConversionAsset(
-    asset_type="METHANE_FURNACE",
+    name="Industrial_methane_furnace",
+    type="METHANE_FURNACE",
     capacityHeat_kW=300,
     eta_r=0.99,
     deliveryTemp_degc=120,
 )
 
 Industrial_hydrogen_furnace = ChemicalHeatConversionAsset(
-    asset_type="HYDROGEN_FURNACE",
+    name="Industrial_hydrogen_furnace",
+    type="HYDROGEN_FURNACE",
     capacityHeat_kW=300,
     eta_r=0.99,
     deliveryTemp_degc=120,
 )
 
 Building_gas_burner_60kW = ChemicalHeatConversionAsset(
-    asset_type="GAS_BURNER",
+    name="Building_gas_burner_60kW",
+    type="GAS_BURNER",
     capacityHeat_kW=60,
     eta_r=0.95,
     deliveryTemp_degc=90,
 )
 
 Building_heatpump_20kW = TransportHeatConversionAsset(
-    asset_type="HEAT_PUMP_AIR",
+    name="Building_heatpump_20kW",
+    type="HEAT_PUMP_AIR",
     capacityElectricity_kW=20,
     eta_r=0.6,
     deliveryTemp_degc=60,
