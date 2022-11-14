@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Actor {
+            category
+            id : str
+            parent_actor : str
+            type : Optional[SubTypeEnum]
+          }
+          class ActorTypeEnum {
+            name
+          }
+          class SubTypeEnum {
+            name
+          }
+          ActorTypeEnum --* Actor : category
+  
+       </div>
+  </body>
+</html>

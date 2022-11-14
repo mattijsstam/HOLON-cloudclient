@@ -72,12 +72,12 @@ Happy experimenting!
 
 Data classes are used to structure and validate data before it is sent to the AnyLogic API. Find the class diagrams below:
 
-1. [Grid connections](doc\html\gridconnection_classes.html)
+1. [Grid connections](doc\html\gridconnections_classes.html)
 2. [Conversion assets](doc\html\conversion_classes.html)
 3. [Consumption assets](doc\html\consumption_classes.html)
 4. [Storage assets](doc\html\storage_classes.html)
 5. [Production assets](doc\html\production_classes.html)
-6. [Gridnode assets](doc\html\gridnode_classes.html)
+6. [Gridnode assets](doc\html\gridnodes_classes.html)
 
 ### Examples
 
