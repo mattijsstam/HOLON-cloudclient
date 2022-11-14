@@ -14,6 +14,7 @@ class StorageAsset(EnergyAsset):
     asset_type: StorageAssetTypeEnum
     stateOfCharge_r: float
     etm_key: Optional[str]
+    name: str
 
 
 class HeatStorageAsset(StorageAsset):

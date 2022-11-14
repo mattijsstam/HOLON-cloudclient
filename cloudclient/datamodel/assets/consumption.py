@@ -14,6 +14,7 @@ class ConsumptionAssetTypeEnum(Enum):
 class ConsumptionAsset(EnergyAsset):
     asset_type: ConsumptionAssetTypeEnum
     etm_key: Optional[str]
+    name: str
 
 
 class HeatConsumptionAsset(ConsumptionAsset):

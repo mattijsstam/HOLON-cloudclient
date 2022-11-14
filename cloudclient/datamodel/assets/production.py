@@ -9,8 +9,8 @@ class ProductionAssetTypeEnum(Enum):
 
 class ProductionAsset(EnergyAsset):
     asset_type: ProductionAssetTypeEnum
-    alias: str
     etm_key: Optional[str]
+    name: str
 
 
 class ElectricProductionAsset(ProductionAsset):
