@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import List
 from cloudclient.datamodel import GridConnection, GridNode, Actor
-from cloudclient.datamodel.config import Policy
+from cloudclient.datamodel.policies import Policy
 import json
 
 
