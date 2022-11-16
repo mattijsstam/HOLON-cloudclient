@@ -1,9 +1,6 @@
 from pathlib import Path
 
-from cloudclient.datamodel import (
-    Payload,
-    Actor,
-)
+from cloudclient.datamodel import Payload, Actor, Contract
 
 actors = [
     Actor(
@@ -11,31 +8,44 @@ actors = [
         type="commercial",
         id="com1",
         parent_actor="hol1",
+        contracts=[Contract(type="DEFAULT", contract_scope="ENERGYHOLON")],
+        
     ),
     Actor(
         category="CONNECTIONOWNER",
         type="commercial",
         id="com2",
         parent_actor="hol1",
+        contracts=[Contract(type="DEFAULT", contract_scope="ENERGYHOLON")],
+        
     ),
     Actor(
         category="CONNECTIONOWNER",
         type="commercial",
         id="com3",
         parent_actor="hol1",
+        contracts=[Contract(type="DEFAULT", contract_scope="ENERGYHOLON")],
+        
     ),
     Actor(
         category="CONNECTIONOWNER",
         type="commercial",
         id="com4",
         parent_actor="hol1",
+        contracts=[Contract(type="DEFAULT", contract_scope="ENERGYHOLON")],
+        
     ),
     Actor(
         category="ENERGYSUPPLIER",
         id="sup1",
         parent_actor="nat",
     ),
-    Actor(category="ENERGYHOLON", id="hol1", parent_actor="sup1"),
+    Actor(
+        category="ENERGYHOLON",
+        id="hol1",
+        parent_actor="sup1",
+        contracts=[Contract(type="GOPACS", contract_scope="GRIDOPERATOR")],
+    ),
     Actor(
         category="GRIDOPERATOR",
         id="o1",

@@ -12,6 +12,7 @@ topfolder = [
     "actors.py",
     "gridconnections.py",
     "gridnodes.py",
+    "contracts.py"
 ]
 assets = ["consumption.py", "conversion.py", "production.py", "storage.py"]
 

@@ -16,3 +16,4 @@ from .assets.storage import *
 from .toplevel import Payload
 from .defaults import *
 from .policies import Policy
+from .contracts import Contract

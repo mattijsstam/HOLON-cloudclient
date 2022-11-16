@@ -11,7 +11,6 @@ class ProductionAssetTypeEnum(Enum):
 class ProductionAsset(EnergyAsset):
     category = "PRODUCTION"
     type: ProductionAssetTypeEnum
-    etm_key: Optional[str]
     name: str
 
 

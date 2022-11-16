@@ -1,10 +1,12 @@
 from pydantic import BaseModel, Extra
 from enum import Enum
-from typing import Optional
+from typing import Optional, List
+from cloudclient.datamodel.contracts import Contract
 
 
 class ActorTypeEnum(Enum):
     gridoperator = "GRIDOPERATOR"
+    administrativeholon = "ADMINISTRATIVEHOLON"
     energyholon = "ENERGYHOLON"
     connectionowner = "CONNECTIONOWNER"
     energysupplier = "ENERGYSUPPLIER"
@@ -18,3 +20,4 @@ class Actor(BaseModel, extra=Extra.forbid):
     type: Optional[SubTypeEnum]
     id: str
     parent_actor: str
+    contracts : Optional[List[Contract]]
