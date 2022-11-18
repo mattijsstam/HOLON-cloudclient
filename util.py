@@ -33,7 +33,9 @@ def generate_excel(
         file_id = f"{file_id}_"
 
     if path is None:
-        path = Path()
+        FOLDER = Path("").resolve().absolute()
+    else:
+        FOLDER = path
 
     ## excel 01: ASSETS
 
@@ -153,6 +155,3 @@ def read_excel():
 def parse_defaults():
 
     cloudclient.datamodel.defaults.__dict__
-
-
-from mvp import payload
