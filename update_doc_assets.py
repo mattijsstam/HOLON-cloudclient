@@ -12,6 +12,7 @@ topfolder = [
     "actors.py",
     "gridconnections.py",
     "gridnodes.py",
+    "contracts.py"
 ]
 assets = ["consumption.py", "conversion.py", "production.py", "storage.py"]
 
@@ -26,3 +27,9 @@ for base_path, file in do_these_please:
     os.chdir(base_path)
     os.system(f"pyreverse {file} -o html")
     shutil.move(base_path / "classes.html", DIAGRAM_FOLDER / f"{stem}_classes.html")
+
+from util import generate_excel
+from mvp import payload
+generate_excel(
+    payload=payload, file_id="example", path=Path(__file__).parent / "doc" / "assets"
+)

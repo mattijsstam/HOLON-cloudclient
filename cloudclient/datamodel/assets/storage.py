@@ -14,7 +14,6 @@ class StorageAsset(EnergyAsset):
     category = "STORAGE"
     type: StorageAssetTypeEnum
     stateOfCharge_r: float
-    etm_key: Optional[str]
     name: str
 
 

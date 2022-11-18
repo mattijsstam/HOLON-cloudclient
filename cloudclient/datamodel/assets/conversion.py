@@ -18,7 +18,6 @@ class ConversionAsset(EnergyAsset):
     category = "CONVERSION"
     type: ConversionAssetTypeEnum
     eta_r: float
-    etm_key: Optional[str]
     name: str
 
 

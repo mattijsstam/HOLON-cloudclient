@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <div class="mermaid">
+    
+        classDiagram
+          class Contract {
+            contract_scope
+            type
+          }
+          class ContractScopeEnum {
+            name
+          }
+          class ContractTypeEnum {
+            name
+          }
+          ContractScopeEnum --* Contract : contract_scope
+          ContractTypeEnum --* Contract : type
+  
+       </div>
+  </body>
+</html>

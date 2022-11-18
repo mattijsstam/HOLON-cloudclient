@@ -14,8 +14,8 @@ class ConsumptionAssetTypeEnum(Enum):
 class ConsumptionAsset(EnergyAsset):
     category = "CONSUMPTION"
     type: ConsumptionAssetTypeEnum
-    etm_key: Optional[str]
     name: str
+
 
 class HeatConsumptionAsset(ConsumptionAsset):
     yearlyDemandHeat_kWh: float

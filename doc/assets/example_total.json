@@ -9,14 +9,12 @@
       "assets": [
         {
           "type": "ELECTRICITY_DEMAND",
-          "etm_key": "logistics_fleet_e_hgv",
           "name": "Logistics_fleet_hgv_E",
           "category": "CONSUMPTION",
           "yearlyDemandElectricity_kWh": 6500000.0
         },
         {
           "type": "PHOTOVOLTAIC",
-          "etm_key": "Solar panels for building, 0 kWp",
           "name": "Building_solarpanels_0kWp",
           "category": "PRODUCTION",
           "capacityElectricity_kW": 0.0
@@ -24,7 +22,6 @@
         {
           "type": "GAS_BURNER",
           "eta_r": 0.95,
-          "etm_key": null,
           "name": "Building_gas_burner_60kW",
           "category": "CONVERSION",
           "deliveryTemp_degc": 90.0,
@@ -45,7 +42,6 @@
       "assets": [
         {
           "type": "PHOTOVOLTAIC",
-          "etm_key": "Solar panels for building, 0 kWp",
           "name": "Building_solarpanels_0kWp",
           "category": "PRODUCTION",
           "capacityElectricity_kW": 0.0
@@ -53,7 +49,6 @@
         {
           "type": "GAS_BURNER",
           "eta_r": 0.95,
-          "etm_key": null,
           "name": "Building_gas_burner_60kW",
           "category": "CONVERSION",
           "deliveryTemp_degc": 90.0,
@@ -73,14 +68,12 @@
       "assets": [
         {
           "type": "PHOTOVOLTAIC",
-          "etm_key": "Solar field 1 MW",
           "name": "Solarpanels_1MW",
           "category": "PRODUCTION",
           "capacityElectricity_kW": 1000.0
         },
         {
           "type": "PHOTOVOLTAIC",
-          "etm_key": "Solar field 1 MW",
           "name": "Solarpanels_1MW",
           "category": "PRODUCTION",
           "capacityElectricity_kW": 1000.0
@@ -98,7 +91,6 @@
         {
           "type": "STORAGE_ELECTRIC",
           "stateOfCharge_r": 1.0,
-          "etm_key": null,
           "name": "Grid_battery_10MWh",
           "category": "STORAGE",
           "capacityElectricity_kW": 2000.0,
@@ -131,43 +123,75 @@
       "category": "CONNECTIONOWNER",
       "type": "commercial",
       "id": "com1",
-      "parent_actor": "hol1"
+      "parent_actor": "hol1",
+      "contracts": [
+        {
+          "type": "DEFAULT",
+          "contract_scope": "ENERGYHOLON"
+        }
+      ]
     },
     {
       "category": "CONNECTIONOWNER",
       "type": "commercial",
       "id": "com2",
-      "parent_actor": "hol1"
+      "parent_actor": "hol1",
+      "contracts": [
+        {
+          "type": "DEFAULT",
+          "contract_scope": "ENERGYHOLON"
+        }
+      ]
     },
     {
       "category": "CONNECTIONOWNER",
       "type": "commercial",
       "id": "com3",
-      "parent_actor": "hol1"
+      "parent_actor": "hol1",
+      "contracts": [
+        {
+          "type": "DEFAULT",
+          "contract_scope": "ENERGYHOLON"
+        }
+      ]
     },
     {
       "category": "CONNECTIONOWNER",
       "type": "commercial",
       "id": "com4",
-      "parent_actor": "hol1"
+      "parent_actor": "hol1",
+      "contracts": [
+        {
+          "type": "DEFAULT",
+          "contract_scope": "ENERGYHOLON"
+        }
+      ]
     },
     {
       "category": "ENERGYSUPPLIER",
       "type": null,
       "id": "sup1",
-      "parent_actor": "nat"
+      "parent_actor": "nat",
+      "contracts": null
     },
     {
       "category": "ENERGYHOLON",
       "type": null,
       "id": "hol1",
-      "parent_actor": "sup1"
+      "parent_actor": "sup1",
+      "contracts": [
+        {
+          "type": "GOPACS",
+          "contract_scope": "GRIDOPERATOR"
+        }
+      ]
     },
     {
       "category": "GRIDOPERATOR",
       "type": null,
       "id": "o1",
-      "parent_actor": "nat"
+      "parent_actor": "nat",
+      "contracts": null
     }
   ],
   "policies": [
